@@ -2,6 +2,9 @@
 {% block title %} {{ post.title }} {% endblock %}
 
 {% block content %}
+  {% if post.author_id == current_user.id %}
+    <a href="/post/delete/{{ post.id }}" class="btn tooltip tooltip-bottom" data-tooltip="permanently delete this post">Delete</a>
+  {% endif %}
   {% if post.id is not defined %}
     <h1>Post not found</h1>
   {% else %}

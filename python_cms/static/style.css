@@ -68,3 +68,9 @@ main {
 #createPost {
   margin-top: 20px;
 }
+
+.btn{
+  float: right;
+  background-color: rgb(27, 29, 172);
+  color:white
+}

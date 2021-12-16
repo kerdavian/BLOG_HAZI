@@ -6,6 +6,15 @@
   <h1 class="no-posts">We have no posts to show</h1>
   {% endif %}
 
+  {% for message in get_flashed_messages() %}
+   <div class="toast toast-success">
+       <button class="btn btn-clear float-right"></button>
+         {{message}}
+   </div>
+   {% endfor %}
+
+
+
 <div class="columns">
   {% for post in posts %}
     <div class="column col-6 col-md-12">
@@ -23,4 +32,9 @@
     </div>
   {% endfor %}
 </div>
+{% endblock %}
+
+{% block bodysource %}
+
+ <script src="{{url_for('static', filename="close_toasts.js")}}"></script>
 {% endblock %}
